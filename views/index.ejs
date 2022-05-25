@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Timeline</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <h4 id="theTimeLine">The Timeline</h4>
+    <div id="bodyContent">
+        <h4 id="h4PostMessage">Post a message</h4>
+        <form id="formAction" action="/" method="POST">
+            <input class="inputs" type="text" placeholder="enter your full name" name="fullName" />
+            <br>
+            <textarea class="inputs" placeholder="enter your message" name="message_post"></textarea>
+            <br>
+            <button id="postMessage">Post a message</button>
+        </form>
+        <% if(result) { %>
+            <h1 class="result">
+                <%= result %>
+            </h1>
+            <% } %>
+
+                <% if(isAdmin) { %>
+                    <h1>
+                        <%= fullName %>
+                    </h1>
+
+                    <% if(allMessages.length> 0) { %>
+                        <% allMessages.forEach( message=> { %>
+                            <li>
+                                <span class="fullAndDate">
+                                    <%= message.fullName %> -
+                                </span> <span class="fullAndDate">
+                                    <%= message.create_date %>
+                                </span>
+                                <p>
+                                    <%= message.message_post %>
+                                </p>
+
+                            </li>
+                            <% }) %>
+                                <% } else { %>
+                                    <h3 class="err"> No messages found </h3>
+                                    <% } %>
+                                        <% } %>
+
+
+                                            <script src="js.js"></script>
+    </div>
+</body>
+
+</html>

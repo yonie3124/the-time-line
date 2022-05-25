@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <a href="/">Go Back....</a>
+        <form action="/confirm-edit?user_id=<%= user._id %>" method="POST">
+            fullName:
+            <input type="text" placeholder="fullName" name="fullName" value="<%= message.fullName %>" />
+            <br>
+           
+            message_post:
+            <textarea name="message">
+                <%= message.message_post %>
+            </textarea>
+            <input type="text" name="message_post" value="<%= message.message_post %>" />
+            <br>
+            <Br>
+            <button>confirm edit</button>
+        </form>
+    </body>
+</html>
